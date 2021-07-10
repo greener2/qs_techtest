@@ -1,4 +1,4 @@
-
+"""User request schema validation (using jsonschema)"""
 
 add_user_schema = {
     "title": "Add User",

@@ -1,3 +1,5 @@
+"""App entry point"""
+
 import os
 
 from qs_techtest.app import create_app

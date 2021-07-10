@@ -1,6 +1,6 @@
-from flask_migrate import Migrate
+"""QS Tech Test extension initialisation"""
+
 from flask_sqlalchemy import SQLAlchemy
 
 
 db = SQLAlchemy()
-migrate = Migrate()

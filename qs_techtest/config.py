@@ -1,3 +1,5 @@
+"""QS Tech Test config objects"""
+
 import os
 
 
