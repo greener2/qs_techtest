@@ -49,6 +49,9 @@ def get_users():
     if not sort_on_field:
         sort_on_field = "first_name"
 
+    if not hasattr(User, sort_on_field):
+        return make_response(jsonify(error=f"User object has no field {sort_on_field!r}."), 400)
+
     users = User.query.order_by(desc(getattr(User, sort_on_field))).all()
 
     return_data = [user.serialise for user in users]

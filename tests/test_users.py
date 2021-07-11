@@ -222,6 +222,16 @@ class TestUsers(TestCase):
         self.assertEqual("james.bond@mi6.co.uk", data[1]["email_address"])
         self.assertEqual("United States", data[1]["country"])
 
+    def test_get_users_invalid_sort_field(self):
+        """Tests get users endpoint with an invalid sort field"""
+
+        response = self.client.get('/v1/users/?sort=star_sign')
+
+        data = response.json
+
+        self.assertEqual(400, response.status_code)
+        self.assertEqual("User object has no field 'star_sign'.", data["error"])
+
     def tearDown(self) -> None:
         """Tidies up test database"""
 
